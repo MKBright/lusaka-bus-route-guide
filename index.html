@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find sample Lusaka minibus routes between two stops, including one-change trips, with approximate fares in ZMW. Works offline.">
+  <meta name="author" content="Wankumbu Musunga">
+  <meta name="theme-color" content="#10261c">
+  <title>Lusaka Minibus Guide</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#search-form">Skip to search</a>
+
+  <header class="top">
+    <div class="wrap top-grid">
+      <div>
+        <p class="eyebrow">Lusaka, Zambia · student project</p>
+        <h1>Minibus Guide</h1>
+        <p class="tagline">Find a sample route, a change point, and an approximate fare.</p>
+      </div>
+      <div class="roll" aria-live="polite">
+        <p class="roll-label">Destination board</p>
+        <p class="roll-text" id="roll-text">WHERE TO?</p>
+        <p class="roll-meta">Fares in ZMW · sample only</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <p class="banner" id="banner" role="note">
+      <strong>Sample data.</strong> Routes and fares are approximate and change often. Confirm both with the conductor before you board.
+    </p>
+    <p class="net" id="net-status">Preparing offline copy…</p>
+
+    <div class="tabs" role="tablist" aria-label="Guide sections">
+      <button type="button" id="tab-find" role="tab" aria-selected="true" aria-controls="panel-find">Find a ride</button>
+      <button type="button" id="tab-routes" role="tab" aria-selected="false" aria-controls="panel-routes">All routes</button>
+    </div>
+
+    <main>
+      <section id="panel-find" role="tabpanel" aria-labelledby="tab-find">
+        <form id="search-form">
+          <div class="fields">
+            <div class="field">
+              <label for="from">From</label>
+              <input id="from" name="from" type="text" autocomplete="off" autocapitalize="words" spellcheck="false" enterkeyhint="search" placeholder="e.g. Town / City Market" aria-autocomplete="list" aria-controls="from-suggestions" aria-expanded="false" required>
+              <ul class="suggestions" id="from-suggestions" role="listbox" hidden></ul>
+            </div>
+            <button class="swap" id="swap" type="button">Swap</button>
+            <div class="field">
+              <label for="to">To</label>
+              <input id="to" name="to" type="text" autocomplete="off" autocapitalize="words" spellcheck="false" enterkeyhint="search" placeholder="e.g. UNZA" aria-autocomplete="list" aria-controls="to-suggestions" aria-expanded="false" required>
+              <ul class="suggestions" id="to-suggestions" role="listbox" hidden></ul>
+            </div>
+          </div>
+          <button class="go" id="go" type="submit" disabled>Find routes</button>
+        </form>
+
+        <div class="examples" id="examples">
+          <p>Try a sample trip</p>
+          <div>
+            <button type="button" data-from="Town / City Market" data-to="UNZA">Town → UNZA</button>
+            <button type="button" data-from="Matero" data-to="Chelston">Matero → Chelston</button>
+            <button type="button" data-from="Chilenje" data-to="Kalingalinga">Chilenje → Kalingalinga</button>
+            <button type="button" data-from="Soweto Market" data-to="Woodlands">Soweto → Woodlands</button>
+          </div>
+        </div>
+
+        <div id="results" aria-live="polite">
+          <p class="prompt">Choose two stops. The guide looks for a direct minibus, then for a trip with one change.</p>
+        </div>
+      </section>
+
+      <section id="panel-routes" role="tabpanel" aria-labelledby="tab-routes" hidden>
+        <div class="filter-row">
+          <label for="route-filter">Filter routes and stops</label>
+          <input id="route-filter" type="search" placeholder="e.g. Woodlands, East Park, Matero" autocomplete="off" spellcheck="false">
+        </div>
+        <div id="route-list"></div>
+        <div id="stop-list"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p id="footer-disclaimer"><strong>Sample / approximate data.</strong> This guide is a portfolio project, not a live fare board. Operators in Lusaka change routes and fares. Ask the conductor before you pay.</p>
+      <details>
+        <summary>Update a route or a fare</summary>
+        <ol>
+          <li>Edit <code>data/routes.json</code>. Each stop has an <code>id</code>. Each route lists those ids in travel order and a <code>fareZmw</code> amount.</li>
+          <li>The search treats a route as running both ways. You do not store the reverse copy.</li>
+          <li>One-change fares are calculated by adding the two sample fares. You do not store them.</li>
+          <li>Run <code>node --test tests/search.test.js</code>. It checks that every stop can still reach every other stop within one change.</li>
+          <li>Refresh the site. If an old page sticks, bump <code>CACHE_NAME</code> in <code>sw.js</code>.</li>
+        </ol>
+        <p>Keep the sample label. Real fares need a fresh check on the ground.</p>
+      </details>
+      <p class="credit">Built by Wankumbu Musunga · 2nd-year BSc Computer Science (distance) · Lusaka, Zambia · MIT License</p>
+    </footer>
+  </div>
+
+  <noscript>
+    <p class="banner wrap">JavaScript is required to search the sample routes. The route file is <code>data/routes.json</code>.</p>
+  </noscript>
+  <script src="app.js"></script>
+</body>
+</html>
