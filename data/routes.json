@@ -1,0 +1,312 @@
+{
+  "about": {
+    "title": "Sample Lusaka minibus data",
+    "city": "Lusaka",
+    "country": "Zambia",
+    "currency": "ZMW",
+    "sampleCompiled": "2026-11-20",
+    "disclaimer": "SAMPLE DATA ONLY. These routes and fares are approximate examples for a student project. They are not an official route list, they are not a fare survey, and they go out of date when operators change prices. Always confirm the destination and the fare with the conductor before you travel.",
+    "fareModel": "Each fareZmw value is a sample flat fare in Zambian kwacha for one boarding. The guide treats every route as running in both directions. A one-change trip adds the two fares, because the passenger pays again on the second bus.",
+    "howToEdit": "Add a stop under stops, then use its id in a route stops array in one travel order. Keep ids lowercase with hyphens. Set fareZmw to the approximate fare. See the README section How to update route data."
+  },
+  "stops": [
+    {
+      "id": "kulima",
+      "name": "Kulima Tower",
+      "short": "Kulima",
+      "area": "City centre",
+      "featured": true,
+      "aliases": ["Kulima", "Kulima Tower Bus Stop"]
+    },
+    {
+      "id": "town",
+      "name": "Town / City Market",
+      "short": "Town",
+      "area": "City centre",
+      "featured": true,
+      "aliases": ["Town", "City Market", "Cairo Road", "pa Town"]
+    },
+    {
+      "id": "intercity",
+      "name": "Intercity",
+      "short": "Intercity",
+      "area": "City centre",
+      "featured": true,
+      "aliases": ["Intercity Bus Station", "Intercity Bus Terminus", "Bus Terminus"]
+    },
+    {
+      "id": "soweto",
+      "name": "Soweto Market",
+      "short": "Soweto",
+      "area": "City centre",
+      "featured": true,
+      "aliases": ["Soweto"]
+    },
+    {
+      "id": "northmead",
+      "name": "Northmead",
+      "short": "Northmead",
+      "area": "Great East",
+      "featured": false,
+      "aliases": []
+    },
+    {
+      "id": "manda-hill",
+      "name": "Manda Hill",
+      "short": "Manda Hill",
+      "area": "Great East",
+      "featured": true,
+      "aliases": ["Manda Hill Mall", "Manda Hill Shopping Centre"]
+    },
+    {
+      "id": "arcades",
+      "name": "Arcades",
+      "short": "Arcades",
+      "area": "Great East",
+      "featured": false,
+      "aliases": ["Arcades Shopping Mall", "Arcades Mall"]
+    },
+    {
+      "id": "east-park",
+      "name": "East Park",
+      "short": "East Park",
+      "area": "Great East",
+      "featured": true,
+      "aliases": ["East Park Mall"]
+    },
+    {
+      "id": "unza",
+      "name": "UNZA",
+      "short": "UNZA",
+      "area": "Great East",
+      "featured": true,
+      "aliases": ["University of Zambia", "UNZA Great East Campus", "Great East Campus"]
+    },
+    {
+      "id": "chelston",
+      "name": "Chelston",
+      "short": "Chelston",
+      "area": "Great East",
+      "featured": true,
+      "aliases": []
+    },
+    {
+      "id": "chainama",
+      "name": "Chainama",
+      "short": "Chainama",
+      "area": "Great East",
+      "featured": false,
+      "aliases": ["Chainama Hills"]
+    },
+    {
+      "id": "kalingalinga",
+      "name": "Kalingalinga",
+      "short": "Kalingalinga",
+      "area": "East",
+      "featured": true,
+      "aliases": []
+    },
+    {
+      "id": "mtendere",
+      "name": "Mtendere",
+      "short": "Mtendere",
+      "area": "East",
+      "featured": true,
+      "aliases": []
+    },
+    {
+      "id": "longacres",
+      "name": "Longacres",
+      "short": "Longacres",
+      "area": "Central",
+      "featured": false,
+      "aliases": []
+    },
+    {
+      "id": "kamwala",
+      "name": "Kamwala",
+      "short": "Kamwala",
+      "area": "South",
+      "featured": false,
+      "aliases": []
+    },
+    {
+      "id": "kabwata",
+      "name": "Kabwata",
+      "short": "Kabwata",
+      "area": "South",
+      "featured": true,
+      "aliases": []
+    },
+    {
+      "id": "libala",
+      "name": "Libala",
+      "short": "Libala",
+      "area": "South",
+      "featured": false,
+      "aliases": []
+    },
+    {
+      "id": "chilenje",
+      "name": "Chilenje",
+      "short": "Chilenje",
+      "area": "South",
+      "featured": true,
+      "aliases": []
+    },
+    {
+      "id": "woodlands",
+      "name": "Woodlands",
+      "short": "Woodlands",
+      "area": "South",
+      "featured": true,
+      "aliases": []
+    },
+    {
+      "id": "kabulonga",
+      "name": "Kabulonga",
+      "short": "Kabulonga",
+      "area": "South",
+      "featured": false,
+      "aliases": []
+    },
+    {
+      "id": "chawama",
+      "name": "Chawama",
+      "short": "Chawama",
+      "area": "South-west",
+      "featured": false,
+      "aliases": []
+    },
+    {
+      "id": "emmasdale",
+      "name": "Emmasdale",
+      "short": "Emmasdale",
+      "area": "North-west",
+      "featured": false,
+      "aliases": []
+    },
+    {
+      "id": "matero",
+      "name": "Matero",
+      "short": "Matero",
+      "area": "North-west",
+      "featured": true,
+      "aliases": []
+    }
+  ],
+  "routes": [
+    {
+      "id": "cbd-spine",
+      "name": "Kulima Tower – Town – Intercity",
+      "fareZmw": 8,
+      "via": "Sample path across the city centre",
+      "stops": ["kulima", "town", "intercity"]
+    },
+    {
+      "id": "great-east-trunk",
+      "name": "Town – East Park – UNZA",
+      "fareZmw": 15,
+      "via": "Sample path along Great East Road",
+      "stops": ["kulima", "town", "northmead", "manda-hill", "arcades", "east-park", "unza"]
+    },
+    {
+      "id": "town-chelston",
+      "name": "Town – UNZA – Chelston",
+      "fareZmw": 15,
+      "via": "Sample path along Great East Road",
+      "stops": ["town", "manda-hill", "east-park", "unza", "chelston", "chainama"]
+    },
+    {
+      "id": "town-kalingalinga",
+      "name": "Town – Kalingalinga – Mtendere",
+      "fareZmw": 15,
+      "via": "Sample path along Great East Road, then into Kalingalinga",
+      "stops": ["town", "manda-hill", "east-park", "kalingalinga", "mtendere"]
+    },
+    {
+      "id": "unza-east-local",
+      "name": "UNZA – Kalingalinga – Mtendere",
+      "fareZmw": 10,
+      "via": "Sample local ride on the east side",
+      "stops": ["unza", "kalingalinga", "mtendere"]
+    },
+    {
+      "id": "chelston-mtendere",
+      "name": "Chelston – Kalingalinga – Mtendere",
+      "fareZmw": 10,
+      "via": "Sample local ride on the east side",
+      "stops": ["chelston", "kalingalinga", "mtendere"]
+    },
+    {
+      "id": "south-trunk",
+      "name": "Town – Kabwata – Woodlands",
+      "fareZmw": 12,
+      "via": "Sample path south through Kamwala and Chilenje",
+      "stops": ["town", "intercity", "kamwala", "kabwata", "libala", "chilenje", "woodlands"]
+    },
+    {
+      "id": "kabwata-woodlands",
+      "name": "Kabwata – Chilenje – Woodlands",
+      "fareZmw": 8,
+      "via": "Sample short ride through the south",
+      "stops": ["kabwata", "libala", "chilenje", "woodlands", "kabulonga"]
+    },
+    {
+      "id": "matero-trunk",
+      "name": "Kulima Tower – Soweto – Matero",
+      "fareZmw": 12,
+      "via": "Sample path to Matero via Soweto Market",
+      "stops": ["kulima", "town", "soweto", "emmasdale", "matero"]
+    },
+    {
+      "id": "soweto-intercity",
+      "name": "Soweto Market – Intercity",
+      "fareZmw": 8,
+      "via": "Sample path across the city centre",
+      "stops": ["soweto", "town", "intercity"]
+    },
+    {
+      "id": "soweto-chilenje",
+      "name": "Soweto – Chawama – Woodlands",
+      "fareZmw": 12,
+      "via": "Sample south-west link",
+      "stops": ["soweto", "chawama", "chilenje", "woodlands"]
+    },
+    {
+      "id": "town-chawama",
+      "name": "Town – Chawama",
+      "fareZmw": 12,
+      "via": "Sample path south-west out of town",
+      "stops": ["town", "chawama"]
+    },
+    {
+      "id": "manda-south",
+      "name": "Manda Hill – Kabwata – Woodlands",
+      "fareZmw": 15,
+      "via": "Sample path through Longacres, then south",
+      "stops": ["manda-hill", "longacres", "kabulonga", "woodlands", "chilenje", "kabwata"]
+    },
+    {
+      "id": "matero-manda",
+      "name": "Matero – Manda Hill",
+      "fareZmw": 15,
+      "via": "Sample path through Northmead to the malls",
+      "stops": ["matero", "emmasdale", "northmead", "manda-hill", "arcades"]
+    },
+    {
+      "id": "eastpark-intercity",
+      "name": "East Park – Intercity",
+      "fareZmw": 12,
+      "via": "Sample path through Manda Hill and Longacres",
+      "stops": ["east-park", "arcades", "manda-hill", "longacres", "intercity"]
+    },
+    {
+      "id": "kalingalinga-kabwata",
+      "name": "Kalingalinga – Kabwata",
+      "fareZmw": 12,
+      "via": "Sample path through East Park and Longacres",
+      "stops": ["kalingalinga", "east-park", "longacres", "kabwata"]
+    }
+  ]
+}

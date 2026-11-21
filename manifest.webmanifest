@@ -1,0 +1,19 @@
+{
+  "name": "Lusaka Minibus Guide",
+  "short_name": "Minibus",
+  "description": "Sample Lusaka minibus routes, stops and approximate fares. Works offline.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3efe4",
+  "theme_color": "#10261c",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
